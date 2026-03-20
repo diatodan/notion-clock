@@ -4,13 +4,14 @@
 <div id="clock"></div>
 
 <script>
-function updateClock() {
+function updateDate() {
   const now = new Date();
-  document.getElementById("clock").textContent =
-    now.toLocaleTimeString();
+  const options = { day: 'numeric', month: 'long', year: 'numeric' };
+  const dateFR = now.toLocaleDateString('fr-FR', options);
+  document.getElementById("clock").textContent = dateFR;
 }
-setInterval(updateClock, 1000);
-updateClock();
+
+updateDate();
 </script>
 </body>
 </html>
